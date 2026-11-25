@@ -1,0 +1,63 @@
+{
+  "name": "dsh-chatdemo",
+  "version": "0.1.0",
+  "description": "Chat in DeepSeek Harness with the exact request shape of DeepSeek's open-source chat-demo: one-line system prompt, server-side web search, citations, automatic model selection, no API key when DSH is signed in.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "chat-demo",
+    "deepseek",
+    "chat",
+    "preset",
+    "provider"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./silence": "./src/silence.js",
+    "./model": "./src/model.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "locale",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node test/run.mjs",
+    "check": "node --check src/index.js && node --check src/wire.js && node --check src/stream-map.js && node --check src/sse.js && node --check src/config.js && node --check src/auth.js && node --check src/errors.js && node --check src/model.js && node --check src/silence.js",
+    "pack:check": "npm pack --dry-run --json"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.3 <0.3.0-0",
+    "node": ">=22.12"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+
+"repository": {
+  "type": "git",
+  "url": "git+https://github.com/nmgmeng/dsh-chatdemo.git"
+},
+"homepage": "https://github.com/nmgmeng/dsh-chatdemo#readme",
+"bugs": {
+  "url": "https://github.com/nmgmeng/dsh-chatdemo/issues"
+}
+}

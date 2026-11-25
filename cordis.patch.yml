@@ -1,0 +1,48 @@
+# dsh-chatdemo：把 chat-demo 的请求形状搬进 DSH
+#
+# 三行：
+#   chatdemo-provider  Host provider：注册 chatdemo 路由与两个模型
+#   chatdemo-model     全局子插件：ChatDemo 预设的会话自动选中 chatdemo-flash
+#   preset-chatdemo    预设：一句话身份 + 清空客户端工具 + 压缩命令
+#
+# 修改 config 后重启 DSH 生效；默认值即可用，常规用户不需要改。
+- insert:
+    - id: chatdemo-provider
+      name: dsh-chatdemo
+      config:
+        apiKeyEnv: DEEPSEEK_API_KEY
+        auth: auto
+        idleTimeoutMs: 300000
+
+    - id: chatdemo-model
+      name: dsh-chatdemo/model
+
+    - id: preset-chatdemo
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: chatdemo
+        name: ChatDemo 语气
+        description: 纯聊天（无工具）：chat-demo 的一句话身份 + 服务端搜索；模型自动为 ChatDemo 1:1
+        order: 25
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              # 与 src/wire.js 的 SYSTEM_PROMPT 必须逐字节一致（含全角逗号与句号）。
+              prefix: 该助手为DeepSeek，由深度求索公司创造。
+              complete: true
+              includeRuntimeContext: false
+          - id: silence
+            name: dsh-chatdemo/silence
+            config:
+              allow: []
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'

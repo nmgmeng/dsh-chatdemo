@@ -1,0 +1,13 @@
+dsh-chatdemo
+============
+
+This package implements a DSH provider whose request shape follows the public
+client source of DeepSeek's chat-demo (https://github.com/deepseek-ai/chat-demo),
+released under the MIT License.
+
+The implementation in this repository is independently written: no source code
+from chat-demo is copied. docs/SPEC.md records the observed request/response
+contract and cites the upstream paths it comes from, for verification.
+
+"DeepSeek" is a trademark of its owner. This project is unofficial and is not
+affiliated with, endorsed by, or sponsored by DeepSeek.

@@ -1,0 +1,10 @@
+node_modules/
+*.tgz
+*.log
+.env
+.env.*
+dist/
+.npm-cache/
+pack.json
+.DS_Store
+Thumbs.db

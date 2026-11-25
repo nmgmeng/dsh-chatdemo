@@ -1,0 +1,23 @@
+# Changelog
+
+## 0.1.0 — 2026-11-25
+
+首个可发布版本。
+
+- 新增 `chatdemo` provider：注册 `chatdemo-flash` 与 `chatdemo-flash-nosearch`
+  两个模型，按 chat-demo 的 wire 形状发请求（一句话 system、`safety_check`、
+  服务端搜索工具、`latest_reminder`、不发 `max_tokens`/`temperature`/`output_config`）。
+- 新增「ChatDemo 语气」预设（id `chatdemo`）：清空客户端工具、只保留一句话身份；
+  模型由插件自动选中，不再需要手选；切回其它预设时恢复进入前的模型
+  （没有记忆时回退到 DSH 部署默认模型）。
+- 自动选择不依赖单一事件：`agent/created`、`agent-preset/selected`、会话事件
+  与 1.5 秒低频扫描共同兜底；首轮之后不再改用户手选。
+- 凭据复用：DSH 账户登录态（`x-dsh-auth-token`，401 时清除失效登录）或
+  `DEEPSEEK_API_KEY` 凭据引用；插件不保存密钥。
+- 失败码对齐 DSH 的 `LLM_FAILURE_CODES`：401/402/429/5xx/超时/网络分别映射为
+  `AUTH`（账户为 `ACCOUNT_TOKEN_INVALID`）、`QUOTA`、`RATE_LIMIT`、`SERVER`、
+  `TIMEOUT`、`TRANSPORT`；重试交给 `dsh-llm-retry`。
+- SSE 空闲超时（默认 300 秒，可配）、图片上传超时、取消信号贯穿请求与上传。
+- 图片：Files API 上传 + 长边 4096 压缩（Electron 环境）。
+- 打包：单包三行插件、中英 locale、图标、详情页、SPEC、CI 与打包守卫。
+- 已知限制：无客户端工具；附件只支持图片；`refusal` 无法撤回；reminder 固定 zh-CN。

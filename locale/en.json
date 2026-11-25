@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "ChatDemo 1:1",
+    "description": "Chat inside DSH with the exact request shape of DeepSeek's open-source chat-demo: one-line system prompt, server-side web search and citations, no client tools. Adds a ChatDemo preset and the chatdemo provider; choosing the preset selects the model automatically. Uses your signed-in DSH account or the DEEPSEEK_API_KEY credential reference, and sends requests only to api.deepseek.com.",
+    "detail": "docs/DETAIL.md"
+  }
+}

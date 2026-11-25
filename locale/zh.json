@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "ChatDemo 1:1",
+    "description": "在 DSH 里按 DeepSeek 官方开源前端 chat-demo 的请求形状对话：一句话 system、服务端搜索与引用、无客户端工具。新增「ChatDemo 语气」预设与 chatdemo 路由，选中预设即自动选择模型。凭据复用 DSH 登录态或 DEEPSEEK_API_KEY 引用，请求只发往 api.deepseek.com。",
+    "detail": "docs/DETAIL.md"
+  }
+}
