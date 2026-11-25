@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.1 — 2026-11-25
+
+兼容性下限下调，无代码、wire 契约或行为变化。
+
+- `engines.dsh` 由 `>=0.2.2-rc.3` 改为 `>=0.2.2-rc.1`：本插件用到的扩展点
+  （`ctx.llm.registerAdapter`、`agent.model`、`agentPresets.presetForSession`、
+  `ctx.tools.restrict`、`ctx.systemPrompt.context`、预设子插件）在 rc.1 与 rc.3
+  上的签名一致，DSH 的 v0.2.2-rc.1 升级说明里也没有涉及这些面的破坏性变更。
+  开发与实测仍在 `0.2.2-rc.3` 上完成，未在 rc.1 运行时做过冒烟。
+
 ## 0.1.0 — 2026-11-25
 
 首个可发布版本。

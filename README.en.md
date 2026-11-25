@@ -10,7 +10,7 @@ chat-demo interface instead, use a panel plugin such as chat-in-dsh.
 
 ## Install
 
-Requires DSH `>= 0.2.2-rc.3 < 0.3.0`.
+Requires DSH `>= 0.2.2-rc.1 < 0.3.0`.
 
 ```bash
 dsh plugin --profile desktop add dsh-chatdemo-preset

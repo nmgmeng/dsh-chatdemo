@@ -18,7 +18,7 @@
 
 ## 安装
 
-装之前确认 DSH 版本在支持范围内（`dsh >= 0.2.2-rc.3 < 0.3.0`）。
+装之前确认 DSH 版本在支持范围内（`dsh >= 0.2.2-rc.1 < 0.3.0`）。
 
 **方式 A：插件页**
 
@@ -117,8 +117,8 @@ dsh plugin --profile web add dsh-chatdemo-preset       # Web
 
 ## 兼容性
 
-- 目标版本：DSH `0.2.2-rc.3`（当前发布线）。
-- `engines.dsh` 限定 `>=0.2.2-rc.3 <0.3.0`；每个新 RC 会先跑单测与打包守卫再发版。
+- 最低版本：DSH `0.2.2-rc.1`；开发与实测环境为 `0.2.2-rc.3`，两者的扩展点一致。
+- `engines.dsh` 限定 `>=0.2.2-rc.1 <0.3.0`；每个新 RC 会先跑单测与打包守卫再发版。
 - 只依赖 DSH 自带的扩展点（`ctx.llm.registerAdapter`、`agent.model`、预设子插件），
   不修改 profile、不依赖任何第三方运行时库。
 
