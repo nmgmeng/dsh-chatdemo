@@ -1,5 +1,5 @@
 {
-  "name": "dsh-chatdemo",
+  "name": "dsh-chatdemo-preset",
   "version": "0.1.0",
   "description": "Chat in DeepSeek Harness with the exact request shape of DeepSeek's open-source chat-demo: one-line system prompt, server-side web search, citations, automatic model selection, no API key when DSH is signed in.",
   "type": "module",
@@ -50,14 +50,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmgmeng/dsh-chatdemo.git"
+  },
+  "homepage": "https://github.com/nmgmeng/dsh-chatdemo#readme",
+  "bugs": {
+    "url": "https://github.com/nmgmeng/dsh-chatdemo/issues"
   }
-
-"repository": {
-  "type": "git",
-  "url": "git+https://github.com/nmgmeng/dsh-chatdemo.git"
-},
-"homepage": "https://github.com/nmgmeng/dsh-chatdemo#readme",
-"bugs": {
-  "url": "https://github.com/nmgmeng/dsh-chatdemo/issues"
-}
 }

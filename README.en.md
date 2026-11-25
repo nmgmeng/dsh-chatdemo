@@ -13,8 +13,8 @@ chat-demo interface instead, use a panel plugin such as chat-in-dsh.
 Requires DSH `>= 0.2.2-rc.3 < 0.3.0`.
 
 ```bash
-dsh plugin --profile desktop add dsh-chatdemo
-# or: Plugins -> Add plugin -> dsh-chatdemo
+dsh plugin --profile desktop add dsh-chatdemo-preset
+# or: Plugins -> Add plugin -> dsh-chatdemo-preset
 ```
 
 If an older local build (`@local/dsh-chatdemo-provider` / `-preset`) is

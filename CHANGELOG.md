@@ -20,4 +20,7 @@
 - SSE 空闲超时（默认 300 秒，可配）、图片上传超时、取消信号贯穿请求与上传。
 - 图片：Files API 上传 + 长边 4096 压缩（Electron 环境）。
 - 打包：单包三行插件、中英 locale、图标、详情页、SPEC、CI 与打包守卫。
+- npm 包名为 `dsh-chatdemo-preset`：`dsh-chatdemo` 与既有第三方包 `dsh-chat-demo`
+  过于相似，被 npm 的防混淆机制拒绝；安装命令因此为
+  `dsh plugin add dsh-chatdemo-preset`。GitHub 仓库名仍为 `dsh-chatdemo`。
 - 已知限制：无客户端工具；附件只支持图片；`refusal` 无法撤回；reminder 固定 zh-CN。

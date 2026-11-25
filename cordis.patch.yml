@@ -8,14 +8,14 @@
 # 修改 config 后重启 DSH 生效；默认值即可用，常规用户不需要改。
 - insert:
     - id: chatdemo-provider
-      name: dsh-chatdemo
+      name: dsh-chatdemo-preset
       config:
         apiKeyEnv: DEEPSEEK_API_KEY
         auth: auto
         idleTimeoutMs: 300000
 
     - id: chatdemo-model
-      name: dsh-chatdemo/model
+      name: dsh-chatdemo-preset/model
 
     - id: preset-chatdemo
       name: '@deepseek-ai/dsh-agent-preset'
@@ -33,7 +33,7 @@
               complete: true
               includeRuntimeContext: false
           - id: silence
-            name: dsh-chatdemo/silence
+            name: dsh-chatdemo-preset/silence
             config:
               allow: []
           - id: compaction

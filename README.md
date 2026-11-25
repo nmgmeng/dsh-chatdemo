@@ -22,13 +22,13 @@
 
 **方式 A：插件页**
 
-左侧「插件」→「添加插件」→ 填包名 `dsh-chatdemo` → 安装 → 立即启用。
+左侧「插件」→「添加插件」→ 填包名 `dsh-chatdemo-preset` → 安装 → 立即启用。
 
 **方式 B：命令行**
 
 ```bash
-dsh plugin --profile desktop add dsh-chatdemo   # Desktop
-dsh plugin --profile web add dsh-chatdemo       # Web
+dsh plugin --profile desktop add dsh-chatdemo-preset   # Desktop
+dsh plugin --profile web add dsh-chatdemo-preset       # Web
 ```
 
 > 如果你以前装过本地的 `@local/dsh-chatdemo-provider` / `@local/dsh-chatdemo-preset`，
@@ -126,7 +126,7 @@ dsh plugin --profile web add dsh-chatdemo       # Web
 
 ```bash
 # 插件页点卸载，或
-dsh plugin --profile desktop remove dsh-chatdemo
+dsh plugin --profile desktop remove dsh-chatdemo-preset
 ```
 
 ## 开发

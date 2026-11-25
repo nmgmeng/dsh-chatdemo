@@ -53,7 +53,7 @@ const FORBIDDEN = [
 ]
 
 test('清单：公开包、无私有标记、有 DSH 版本范围', () => {
-  assert.equal(manifest.name, 'dsh-chatdemo')
+  assert.equal(manifest.name, 'dsh-chatdemo-preset')
   assert.equal(manifest.private, undefined)
   assert.match(manifest.engines.dsh, /^>=0\.2\.2-rc\.\d+ <0\.3\.0-0$/)
   assert.equal(manifest.dependencies, undefined, '不引入第三方运行时依赖')
@@ -108,9 +108,9 @@ test('图标是有效图片且不超过 256 KiB', () => {
 
 test('patch：三行、预设 id、persona 与 wire 常量一致', () => {
   const patch = read('cordis.patch.yml')
-  assert.match(patch, /name: dsh-chatdemo\b/)
-  assert.match(patch, /name: dsh-chatdemo\/model/)
-  assert.match(patch, /name: dsh-chatdemo\/silence/)
+  assert.match(patch, /name: dsh-chatdemo-preset\b/)
+  assert.match(patch, /name: dsh-chatdemo-preset\/model/)
+  assert.match(patch, /name: dsh-chatdemo-preset\/silence/)
   assert.match(patch, /id: chatdemo\b/)
   assert.match(patch, /prefix: 该助手为DeepSeek，由深度求索公司创造。/)
   const wire = read('src/wire.js')
